@@ -9,8 +9,8 @@ import javax.swing.JOptionPane;
 
 public class conexiondbagenda {
     
-    public static final String URL="jdbc:mysql://localhost:3600/agenda";
-    public static final String USERNAME="root";
+    public static final String URL="jdbc:mysql://db4free.net:3306/agenda154?autoReconnect=true&useSSL=false";
+    public static final String USERNAME="admin154";
     public static final String PASSEORD="admin1234";
 
     public Connection getConnection(){
