@@ -24,12 +24,19 @@ public class modeloUsuario {
    
         try {
             PreparedStatement ps=con.getConnection().prepareStatement(sql);
-        
+            ps.setInt(1, u.getId());
+            ps.setString(2,u.getName() );
+            ps.setString(3, u.getPass());
+            resultado=ps.executeUpdate();
         } catch (SQLException ex) {
-            Logger.getLogger(modeloUsuario.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("No es inserto los datos"+ex);
         }
     
     return resultado>0;
     
     }
+    
+    
 }
+
+
