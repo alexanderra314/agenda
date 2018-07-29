@@ -56,7 +56,7 @@ public class modeloUsuario {
                 if (select==1) {
                      try {
                             Statement si1=con.getConnection().createStatement();
-                            ResultSet rs1=si.executeQuery(sql2);
+                            ResultSet rs1=si1.executeQuery(sql2);
                             while(rs1.next()){
                                 username=rs1.getString(1);
                                
