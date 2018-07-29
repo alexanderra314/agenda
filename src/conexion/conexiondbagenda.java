@@ -9,20 +9,25 @@ import javax.swing.JOptionPane;
 
 public class conexiondbagenda {
     
-    public static final String URL="jdbc:mysql://db4free.net:3306/agenda154?autoReconnect=true&useSSL=false";
-    public static final String USERNAME="admin154";
-    public static final String PASSEORD="admin1234";
+    public static final String URL="jdbc:mysql://localhost:3306/agenda";
+    public static final String USERNAME="root";
+    public static final String PASS="";
+    private Connection conexion;
 
     public Connection getConnection(){
-         Connection con=null;
+        
          try {
             Class.forName("com.mysql.jdbc.Driver");
-            con=(Connection) DriverManager.getConnection(URL,USERNAME,PASSEORD);
-             System.out.println("CONEXION EXITOSA");
-        } catch (ClassNotFoundException | SQLException e) {
-                JOptionPane.showMessageDialog(null,"NO HAY CONEXION CON LA BASE DE DATOS");
+            conexion = DriverManager.getConnection(URL, USERNAME, PASS);
+            System.out.println("CONEXION EXITOSA");
+        } catch (ClassNotFoundException ex) {
+            System.out.println(ex);
+            System.out.println("revise la libreria");
+        } catch (SQLException ex) {
+            System.out.println(ex);
+            System.out.println("revise la conexion");
         }
-         return con;
+         return conexion;
     }
 }
 
